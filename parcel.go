@@ -24,10 +24,10 @@ func (s ParcelStore) Add(p Parcel) (int, error) {
 		return 0, err
 	}
 
-	number, err := res.LastInsertId()
+	id, err := res.LastInsertId()
 
 	// верните идентификатор последней добавленной записи
-	return int(number), nil
+	return int(id), nil
 }
 
 func (s ParcelStore) Get(number int) (Parcel, error) {
