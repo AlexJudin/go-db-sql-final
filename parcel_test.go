@@ -177,5 +177,10 @@ func TestGetByClient(t *testing.T) {
 		// в parcelMap лежат добавленные посылки, ключ - идентификатор посылки, значение - сама посылка
 		// убедитесь, что все посылки из storedParcels есть в parcelMap
 		// убедитесь, что значения полей полученных посылок заполнены верно
+		require.NotEmpty(t, parcelMap[parcel.Number+1])
+		assert.Equal(t, parcel.Client, parcelMap[parcel.Number].Client)
+		assert.Equal(t, parcel.Status, parcelMap[parcel.Number].Status)
+		assert.Equal(t, parcel.Address, parcelMap[parcel.Number].Address)
+		assert.Equal(t, parcel.CreatedAt, parcelMap[parcel.Number].CreatedAt)
 	}
 }
